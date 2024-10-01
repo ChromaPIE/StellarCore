@@ -50,7 +50,7 @@ public enum Mods {
     VINTAGE_FIX("vintagefix"),
     RGB_CHAT("jianghun"), // ?
     TLM("touhou_little_maid"),
-    CENSORED_ASM("loliasm") {
+    CENSORED_ASM("normalasm") {
         @Override
         public boolean loaded() {
             if (initialized) {
@@ -58,7 +58,7 @@ public enum Mods {
             }
 
             try {
-                Class.forName("zone.rong.loliasm.core.LoliLoadingPlugin");
+                Class.forName("mirror.normalasm.core.NormalLoadingPlugin");
                 initialized = true;
                 return loaded = true;
             } catch (Throwable e) {

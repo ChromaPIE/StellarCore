@@ -2,14 +2,14 @@ package github.kasuminova.stellarcore.common.integration.censoredasm;
 
 import github.kasuminova.stellarcore.common.mod.Mods;
 import github.kasuminova.stellarcore.common.util.StellarLog;
-import zone.rong.loliasm.config.LoliConfig;
+import mirror.normalasm.config.NormalConfig;
 
 @SuppressWarnings("LoggingSimilarMessage")
 public class CensoredASMCompat {
 
     public static boolean checkDelayItemStackCapInitEnabled() {
         if (Mods.CENSORED_ASM.loaded()) {
-            if (LoliConfig.instance.delayItemStackCapabilityInit) {
+            if (NormalConfig.instance.delayItemStackCapabilityInit) {
                 StellarLog.LOG.warn("***************************************************************************");
                 StellarLog.LOG.warn("* CensoredASM option `delayItemStackCapabilityInit` is enabled.");
                 StellarLog.LOG.warn("* This is not compatible with StellarCore's `AsyncItemStackCapabilityInit`.");
@@ -23,7 +23,7 @@ public class CensoredASMCompat {
 
     public static boolean checkNBTMapModified() {
         if (Mods.CENSORED_ASM.loaded()) {
-            if (LoliConfig.instance.optimizeNBTTagCompoundBackingMap || LoliConfig.instance.nbtBackingMapStringCanonicalization) {
+            if (NormalConfig.instance.optimizeNBTTagCompoundBackingMap || NormalConfig.instance.nbtBackingMapStringCanonicalization) {
                 StellarLog.LOG.warn("************************************************************************************************************");
                 StellarLog.LOG.warn("* CensoredASM option `optimizeNBTTagCompoundBackingMap` or `nbtBackingMapStringCanonicalization` is enabled.");
                 StellarLog.LOG.warn("* This is not compatible with StellarCore's `NBTTagCompoundMapImprovements`.");
